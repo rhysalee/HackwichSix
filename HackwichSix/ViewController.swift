@@ -16,6 +16,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //Prblem Set 1
     var myCountriesArray = ["France", "Greece", "Australia", "Canada", "Denmark"]
     
+//HackwichSeven Problem Set
+    var friendsHomeArray = ["Salt Lake", "Salt Lake", "Honolulu", "Ewa Beach", "Fort Shafter"]
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return myCountriesArray.count
@@ -26,9 +29,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")!
        
-        let text = myCountriesArray[indexPath.row]
+        let text = myFriendsArray[indexPath.row]
         
         cell.textLabel?.text = text
+        
+        cell.detailTextLabel?.text = friendsHomeArray[indexPath.row]
         
         return cell
     }
